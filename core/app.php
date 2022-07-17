@@ -6,7 +6,6 @@ class app
     protected $params = [];
     function __construct()
     {
-
         $arr = $this->UrlProcess();
 
         /* Controller */
@@ -14,7 +13,6 @@ class app
             $this->controller = $arr[0];
             unset($arr[0]);
         }
-        
         require_once "./controllers/" . $this->controller . ".php";
         $this->controller = new $this->controller;
 

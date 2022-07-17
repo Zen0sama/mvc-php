@@ -1,13 +1,9 @@
 <?php
-class home
+class home extends controller
 {
     /* default */
     function index()
     {
-        echo 'home controller';
-    }
-
-    function show($a, $b)
-    {
+        $this->view("defaultLayout",[]);
     }
 }

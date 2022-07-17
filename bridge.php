@@ -1,4 +1,3 @@
 <?php
-// Process URL from browser
 require_once "./core/app.php";
-?>
+require_once "./core/controller.php";
