@@ -27,16 +27,16 @@
             <div class="navbar__menu">
                 <ul class="menu flex items-center h-full gap-x-8 text-white font-semibold text-[20px]">
                     <a href="">
-                        <li class="menu__item leading-loose">Menu 1</li>
+                        <li class="menu__item leading-loose">VPS</li>
                     </a>
                     <a href="">
-                        <li class="menu__item leading-loose">Menu 2</li>
+                        <li class="menu__item leading-loose">Nạp Tiền</li>
                     </a>
                     <a href="">
-                        <li class="menu__item leading-loose">Menu 3</li>
+                        <li class="menu__item leading-loose">Blog</li>
                     </a>
                     <a href="">
-                        <li class="menu__item leading-loose">Menu 4</li>
+                        <li class="menu__item leading-loose">Liên hệ</li>
                     </a>
                 </ul>
             </div>
