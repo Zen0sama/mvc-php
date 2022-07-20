@@ -4,6 +4,8 @@ class home extends controller
     /* default */
     function index()
     {
-        $this->view("defaultLayout",[]);
+        $this->view("defaultLayout",[
+            "page"=>"home"
+        ]);
     }
 }
