@@ -1,5 +1,5 @@
 <?php
-class user
+class user extends db
 {
     /* CREAT */
     public function addUser()

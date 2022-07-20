@@ -13,7 +13,6 @@
                     </div>
                     <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
                         <form method="POST">
-    
                             <div class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
                                 <p class="text-center font-semibold mx-4 mb-0">Đăng Nhập</p>
                             </div>

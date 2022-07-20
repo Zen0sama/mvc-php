@@ -5,7 +5,7 @@ class auth extends controller
     function index()
     {
         $this->view("defaultLayout", [
-            "page" => "home"
+            "page" => "login"
         ]);
     }
 
@@ -29,6 +29,14 @@ class auth extends controller
     {
         $this->view("defaultLayout", [
             "page" => "register"
+        ]);
+    }
+
+    /* register */
+    function logout()
+    {
+        $this->view("defaultLayout", [
+            "page" => "logout"
         ]);
     }
 }

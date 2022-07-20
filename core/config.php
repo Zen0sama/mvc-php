@@ -18,8 +18,8 @@ function load_url($url = "")
 function displayUser()
 {
     if (is_login()) {
-        echo "<a href=\"\" class=\"auth__login flex item-centers\">
-        <span class=\"material-icons mr-2\">account_circle</span>".$_SESSION["user"]."</a>";
+        echo "<div onclick=\"showMenuUser()\"><a class=\"auth__login dropbtn flex item-centers\">
+        <span class=\"material-icons mr-2 dropbtn\">account_circle</span>".$_SESSION["user"]."</a></div>";
     } else {
         echo "<a href=\"http://localhost/auth/login\" class=\"auth__login flex item-centers\">
             <span class=\"material-icons mr-2\">login</span>Đăng Nhập

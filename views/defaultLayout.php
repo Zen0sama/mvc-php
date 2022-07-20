@@ -8,10 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/public/styles/3.1.4.css"></script>
     <title>Title Page</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="/public/styles/main.css" />
     <link rel="icon" href="/public/images/favicon.ico">
+    <!-- JS -->
+    <script src="/public/js/main.js"> </script>
 </head>
 
 <body>
@@ -39,7 +42,25 @@
             </div>
             <div class="navbar__auth flex items-center">
                 <span class="material-icons mr-2 px-2 py-2 border-2 hover:cursor-pointer">dark_mode</span>
-                <?php displayUser() ?>
+                <div class="dropdown">
+                    <?php displayUser() ?>
+                    <?php if (is_login()) { ?>
+                        <ul id="menuUser" class="dropdown__content font-semibold">
+                            <a href="">
+                                <li><span class="material-icons text-blue-500">account_circle</span>Thông tin</li>
+                            </a>
+                            <a href="">
+                                <li><span class="material-icons text-green-500">payments</span>Lịch sử nạp tiền</li>
+                            </a>
+                            <a href="">
+                                <li><span class="material-icons text-yellow-500">history</span>Lịch sử thuê vps</li>
+                            </a>
+                            <a href="<?php echo $defaultUrl; ?>/auth/logout">
+                                <li><span class="material-icons text-red-500">logout</span>Đăng xuất</li>
+                            </a>
+                        </ul>
+                    <?php } ?>
+                </div>
             </div>
         </nav>
     </header>
