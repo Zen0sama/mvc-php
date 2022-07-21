@@ -2,14 +2,17 @@
 class user extends db
 {
     /* CREAT */
-    public function addUser()
+    public function addUser($username, $password)
     {
-        return "funtion add user";
+        $qr = "INSERT INTO `account` (`username`, `password`) VALUES ('$username', '$password')";
+        return mysqli_query($this->con, $qr);
     }
 
     /* READ */
-    public function getUser()
+    public function getUser($username)
     {
+        $qr = "SELECT * FROM `account` WHERE `username` = '$username'";
+        return mysqli_query($this->con, $qr);
     }
 
     public function getUsers()

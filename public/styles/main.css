@@ -7,6 +7,12 @@ body {
     vertical-align: baseline;
     box-sizing: border-box;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page__login{
+    min-height: calc(100vh - 300px);
 }
 
 /* menu navbar */
@@ -36,7 +42,6 @@ body {
     z-index: 1;
     position: relative;
     color: white;
-    padding: 0.5em 1em;
     outline: none;
     border: none;
     border: solid 2px white;
@@ -76,6 +81,7 @@ body {
 
 .dropdown__content {
     margin-top: 4px;
+    right: 0;
     display: none;
     position: absolute;
     background-color: #be73c2;
