@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="/public/styles/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css" integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="/public/images/favicon.ico">
     <!-- JS -->
     <script src="/public/js/main.js"> </script>
@@ -21,7 +22,9 @@
 </head>
 
 <body>
-    <?php if (isset($data["success"])) { showToast($data["success"], 2000, "63e071", "57bd99"); } ?>
+    <?php if (isset($data["success"])) {
+        showToast($data["success"], 2000, "63e071", "57bd99");
+    } ?>
     <?php if (isset($data["error"])) showToast($data["error"], 2000, "fa2a2a", "f092a8"); ?>
     <!-- header -->
     <header class="bg-[#94618E] sticky top-0 w-full">
@@ -34,8 +37,8 @@
             </div>
             <!-- Menu Desktop-->
             <div class="navbar__menu hidden md:block">
-                <ul class="menu flex items-center h-full gap-x-8 text-white font-semibold text-[20px]">
-                    <a href="<?php echo $defaultUrl ;?>/vps">
+                <ul class="menu flex items-center h-full gap-x-8 text-white uppercase font-medium text-[20px]">
+                    <a href="<?php echo $defaultUrl; ?>/vps">
                         <li class="menu__item leading-loose">VPS</li>
                     </a>
                     <a href="">
@@ -82,8 +85,8 @@
     <footer class="bg-[#94618E]">
         <div class="max-w-screen-lg m-auto">
             <!-- Begin footer -->
-            <section class="px-2 py-4">
-                <div class="flex flex-col md:flex-row justify-between border-b">
+            <section class="px-2 py-4 border-b">
+                <div class="flex flex-col md:flex-row justify-between">
                     <div class="flex gap-x-2 py-2 justify-center">
                         <div class="">
                             <span class="material-icons text-6xl text-green-500">
@@ -131,25 +134,33 @@
                 </div>
             </section>
             <!-- Midle footer -->
-            <section class="px-2 py-4">
-                <div class="flex flex-wrap justify-between border-b">
-                    <div class="text-white text-xl font-semibold w-[50%] md:w-auto">
+            <section class="px-2 py-4 border-b">
+                <div class="flex flex-wrap justify-between">
+                    <div class="text-white text-xl font-medium w-[50%] md:w-auto">
                         <ul>
-                            <li>Trang Chủ</li>
-                            <li>VPS</li>
-                            <li>Nạp Tiền</li>
-                            <li>Blog</li>
+                            <a href="<?php echo $defaultUrl; ?>/">
+                                <li>Trang Chủ</li>
+                            </a>
+                            <a href="<?php echo $defaultUrl; ?>/vps">
+                                <li>VPS</li>
+                            </a>
+                            <a href="<?php echo $defaultUrl; ?>/money">
+                                <li>Nạp Tiền</li>
+                            </a>
+                            <a href="<?php echo $defaultUrl; ?>/blog">
+                                <li>Blog</li>
+                            </a>
                         </ul>
                     </div>
-                    <div class="text-white text-xl font-semibold w-[50%] md:w-auto">
+                    <div class="text-white text-xl font-medium w-[50%] md:w-auto">
                         <ul>
-                            <li>Facebook</li>
-                            <li>Youtube</li>
-                            <li>Zalo</li>
-                            <li>Telegram</li>
+                            <li><i class="fa-brands fa-facebook-square not-italic text-blue-500 bg-white border-2 rounded"></i> Facebook</li>
+                            <li><i class="fa-brands fa-youtube-square not-italic text-red-500 bg-white border-2 rounded"></i> Youtube</li>
+                            <li><i class="fa-brands fa-whatsapp not-italic text-sky-500 bg-white border-2 rounded"></i> Zalo</li>
+                            <li><i class="fa-brands fa-telegram not-italic text-cyan-500 bg-white border-2 rounded"></i> Telegram</li>
                         </ul>
                     </div>
-                    <div class="text-gray-800 text-xl font-semibold w-full md:w-[33.333%] mt-2 md:mt-0 text-center">
+                    <div class="text-gray-800 text-xl font-medium w-full md:w-[33.333%] mt-2 md:mt-0 text-center">
                         <p>VPS.WIBU247.NET chuyên cung cấp vps trial các loại, đủ mọi location, nạp tiền tự động, hổ trợ 24/7</p>
                     </div>
                 </div>

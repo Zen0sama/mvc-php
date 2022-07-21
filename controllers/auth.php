@@ -13,18 +13,51 @@ class auth extends controller
     /* login */
     function login()
     {
+        /* Default data */
+        $array = ["page" => "login", "title" => "Đăng nhập"];
+
+        /* Check request POST or GET */
         if (!$_POST) {
-            $this->view("defaultLayout", [
-                "page" => "login",
-                "title" => "Đăng nhập"
-            ]);
-        } else {
-            $_SESSION["user"] = "wibu";
-            $this->view("defaultLayout", [
-                "page" => "login",
-                "title" => "Đăng nhập"
-            ]);
+            return $this->view("defaultLayout", $array);
         }
+
+        /* Check request real or fake */
+        if (!isset($_POST['username']) || !isset($_POST['password'])) {
+            $array['error'] = "Request không đúng";
+            return $this->view("defaultLayout", $array);
+        }
+        /* Get data */
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        /* Check null or empty */
+        if (isNulOrEmty($username) || isNulOrEmty($password)) {
+            $array['error'] = "Điền đủ nội dung";
+            return $this->view("defaultLayout", $array);
+        }
+
+        /* Check username */
+        if (isSpecialCharacter($username)) {
+            $array['error'] = "Tên tài khoản không đúng định dạng";
+            return $this->view("defaultLayout", $array);
+        }
+
+        /* Call model */
+        $model = $this->model("user");
+
+        /* Check login */
+        $qr = $model->auth($username, md5($password));
+
+        if ($qr) {
+            $_SESSION["user"] = $username;
+            $array['success'] = "Đăng nhập thành công";
+            $array['page'] = "home";
+            return $this->view("defaultLayout", $array);
+        }
+
+        /* Set session */
+        $array['error'] = "Tài khoản hoặc mật khẩu không chính xác";
+        return $this->view("defaultLayout", $array);
     }
 
     /* register */
@@ -90,7 +123,8 @@ class auth extends controller
     function logout()
     {
         $this->view("defaultLayout", [
-            "page" => "logout"
+            "page" => "logout",
+            "title" => "Đăng xuất"
         ]);
     }
 }
