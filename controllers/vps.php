@@ -1,12 +1,12 @@
 <?php
-class home extends controller
+class vps extends controller
 {
     /* default */
     function index()
     {
         $this->view("defaultLayout",[
-            "page"=>"home",
-            "title" => "Trang chủ"
+            "page"=>"vps",
+            "title" => "VPS"
         ]);
     }
 }

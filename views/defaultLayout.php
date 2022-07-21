@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/public/styles/3.1.4.css"></script>
-    <title>Title Page</title>
+    <title><?php echo $data['title']; ?></title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -35,7 +35,7 @@
             <!-- Menu Desktop-->
             <div class="navbar__menu hidden md:block">
                 <ul class="menu flex items-center h-full gap-x-8 text-white font-semibold text-[20px]">
-                    <a href="">
+                    <a href="<?php echo $defaultUrl ;?>/vps">
                         <li class="menu__item leading-loose">VPS</li>
                     </a>
                     <a href="">

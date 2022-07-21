@@ -5,7 +5,8 @@ class auth extends controller
     function index()
     {
         $this->view("defaultLayout", [
-            "page" => "login"
+            "page" => "login",
+            "title" => "Đăng nhập"
         ]);
     }
 
@@ -14,12 +15,14 @@ class auth extends controller
     {
         if (!$_POST) {
             $this->view("defaultLayout", [
-                "page" => "login"
+                "page" => "login",
+                "title" => "Đăng nhập"
             ]);
         } else {
             $_SESSION["user"] = "wibu";
             $this->view("defaultLayout", [
-                "page" => "login"
+                "page" => "login",
+                "title" => "Đăng nhập"
             ]);
         }
     }
@@ -28,7 +31,7 @@ class auth extends controller
     function register()
     {
         /* Default data */
-        $array = ["page" => "register"];
+        $array = ["page" => "register", "title" => "Đăng kí"];
 
         /* Check request POST or GET */
         if (!$_POST) {
@@ -52,7 +55,7 @@ class auth extends controller
         }
 
         /* Check username */
-        if(isSpecialCharacter($username)){
+        if (isSpecialCharacter($username)) {
             $array['error'] = "Tên tài khoản không đúng định dạng";
             return $this->view("defaultLayout", $array);
         }
@@ -64,24 +67,23 @@ class auth extends controller
         }
 
         /* call model */
-        $model = $this -> model("user");
+        $model = $this->model("user");
 
         /* Check user already exists */
-        $qr = $model -> getUser($username);
-        if(mysqli_num_rows($qr)>0){
+        $qr = $model->getUser($username);
+        if (mysqli_num_rows($qr) > 0) {
             $array['error'] = "Người dùng đã tồn tại";
             return $this->view("defaultLayout", $array);
         }
 
         /* Insert user to table */
-        $qr = $model -> addUser($username, md5($password));
-        if($qr==1){
+        $qr = $model->addUser($username, md5($password));
+        if ($qr == 1) {
             $_SESSION["user"] = $username;
             $array['success'] = "Đăng kí thành công";
             $array['page'] = "home";
             return $this->view("defaultLayout", $array);
         }
-        
     }
 
     /* register */
