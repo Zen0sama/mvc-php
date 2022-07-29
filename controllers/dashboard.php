@@ -1,7 +1,7 @@
 <?php
-class home extends controller
+class dashboard extends controller
 {
-    protected $array = ["page" => "home", "title"=> "Trang chủ"];
+    protected $array = ["page" => "dashboard", "title"=> "Admin"];
     function __construct()
     {
         if(isset($_SESSION['user'])){
@@ -15,6 +15,6 @@ class home extends controller
     /* default */
     function index()
     {
-        $this->view("defaultLayout",$this -> array);
+        $this->view("adminLayout",$this -> array);
     }
 }

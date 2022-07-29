@@ -51,7 +51,7 @@ class auth extends controller
         if ($qr) {
             $_SESSION["user"] = $username;
             $array['success'] = "Đăng nhập thành công";
-            $array['page'] = "home";
+            $array['page'] = "login";
             return $this->view("defaultLayout", $array);
         }
 
@@ -114,7 +114,7 @@ class auth extends controller
         if ($qr == 1) {
             $_SESSION["user"] = $username;
             $array['success'] = "Đăng kí thành công";
-            $array['page'] = "home";
+            $array['page'] = "register";
             return $this->view("defaultLayout", $array);
         }
     }

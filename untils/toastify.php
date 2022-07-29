@@ -1,5 +1,5 @@
 <?php
-function showToast($data, $timeout, $color1, $color2)
+function show_toast($data, $timeout, $color1, $color2)
 {
     echo "<script>
     Toastify({
